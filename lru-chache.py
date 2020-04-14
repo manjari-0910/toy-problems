@@ -1,6 +1,9 @@
 class LRU:
   def __init__(self, capacity):
-      pass
+        self.capacity = capacity
+        self.elements = {}
+        self.elementKey = []
+    pass
   
 
   def put(self, key, value):
