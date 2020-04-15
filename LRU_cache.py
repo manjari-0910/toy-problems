@@ -1,10 +1,18 @@
 class lru:
-      pass
-    
+    def __init__ (self,capacity):
+        super().__init__()
+        self.capacity = capacity
+        self.element = {}
+        self.elements = {}
 
     def put(self,key,data):
-          pass
-        
+        if key not in self.element and len(self.element)==self.capacity:
+            old=min(self.elements.keys(),key=lambda k:self.elements[k])
+            self.element.pop(old)
+            self.elements.pop(old)
+        self.element[key] = data
+        self.elements[key]=1
+        return "Entered"
 
     def get_cache(self):
         return self.element
